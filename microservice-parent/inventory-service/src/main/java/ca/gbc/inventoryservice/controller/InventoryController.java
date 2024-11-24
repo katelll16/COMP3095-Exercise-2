@@ -15,7 +15,6 @@ public class InventoryController {
 
     private final InventoryService inventoryService;
 
-    //http:localhost:8083/api/inventory?skuCode=SKU001&quantity=5
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public boolean isInStock(@RequestParam String skuCode, @RequestParam Integer quantity){

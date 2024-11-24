@@ -42,14 +42,11 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    //http://localhost:8080/api/product/asdoijaoidjasiod
     @PutMapping("/{productId}")
-    //@ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<?> updateProduct(@PathVariable("productId") String productId,
                                             @RequestBody ProductRequest productRequest){
         String updatedProductId = productService.updateProduct(productId, productRequest);
 
-        //sets the location header attribute
         HttpHeaders headers = new HttpHeaders();
         headers.add("Location", "/api/product"+ updatedProductId);
 
